@@ -37,7 +37,7 @@ navigator.mediaDevices
     addVideoStream(myVideo, stream);
 
     myPeer.on("call", (call) => {
-      call.answer(strea);
+      call.answer(stream);
     });
 
     socket.on("user-connected", (userId) => {
@@ -47,8 +47,4 @@ navigator.mediaDevices
 
 myPeer.on("open", (id) => {
   socket.emit("join-room", ROOM_ID, id);
-});
-
-socket.on("user-connected", (userId) => {
-  console.log("user connected" + userId);
 });
